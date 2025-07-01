@@ -8,7 +8,9 @@ import {
   Users, 
   CheckCircle,
   BarChart3,
-  LogOut
+  LogOut,
+  Workflow,
+  Database
 } from 'lucide-react';
 import { useAuthStore } from '../../store/authStore';
 
@@ -17,6 +19,7 @@ const Sidebar: React.FC = () => {
 
   const navigationItems = [
     { to: '/', icon: Home, label: 'Dashboard' },
+    { to: '/workflow', icon: Workflow, label: 'New Workflow' },
     { to: '/sessions', icon: FileText, label: 'Sessions' },
     { to: '/upload', icon: Upload, label: 'Upload Documents' },
     { to: '/reports', icon: BarChart3, label: 'Reports' },
@@ -24,15 +27,16 @@ const Sidebar: React.FC = () => {
 
   const adminItems = [
     { to: '/admin/approvals', icon: CheckCircle, label: 'Approvals' },
-    { to: '/admin/templates', icon: Settings, label: 'Templates' },
+    { to: '/admin/templates', icon: Database, label: 'Templates' },
     { to: '/admin/users', icon: Users, label: 'Users' },
+    { to: '/admin/settings', icon: Settings, label: 'Settings' },
   ];
 
   return (
     <div className="bg-slate-900 text-white w-64 min-h-screen flex flex-col">
       <div className="p-6 border-b border-slate-700">
         <h1 className="text-xl font-bold text-blue-400">TradeFi</h1>
-        <p className="text-sm text-slate-400 mt-1">Discrepancy Finder</p>
+        <p className="text-sm text-slate-400 mt-1">Document Processing</p>
       </div>
 
       <nav className="flex-1 p-4">

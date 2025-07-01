@@ -7,9 +7,9 @@ import Dashboard from './pages/Dashboard';
 import Sessions from './pages/Sessions';
 import SessionDetail from './pages/SessionDetail';
 import Upload from './pages/Upload';
+import WorkflowDashboard from './pages/WorkflowDashboard';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-
 
 function App() {
   const { isAuthenticated, checkAuth } = useAuthStore();
@@ -27,6 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="workflow" element={<WorkflowDashboard />} />
+          <Route path="workflow/:sessionId" element={<WorkflowDashboard />} />
           <Route path="sessions" element={<Sessions />} />
           <Route path="sessions/:sessionId" element={<SessionDetail />} />
           <Route path="upload" element={<Upload />} />

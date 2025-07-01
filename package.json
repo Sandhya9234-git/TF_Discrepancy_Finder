@@ -12,7 +12,8 @@
     "full-dev": "concurrently \"npm run server\" \"npm run dev\"",
     "setup-db": "node server/scripts/setupDatabase.js",
     "test-db": "node server/scripts/testConnection.js",
-    "create-db": "node server/scripts/runDatabaseSetup.js"
+    "create-db": "node server/scripts/setupSqlServer.js",
+    "setup-sql": "node server/scripts/setupSqlServer.js"
   },
   "dependencies": {
     "axios": "^1.6.2",
